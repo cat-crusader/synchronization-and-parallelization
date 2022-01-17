@@ -44,6 +44,10 @@ int getParametrs()
         }
     }
 }
+void communication(PROCESS_INFORMATION pi_f, PROCESS_INFORMATION pi_g) {
+
+
+}
 int main()
 {
     std::cout << "Hello World!\n";
@@ -53,6 +57,22 @@ int main()
             return 0;
         }
         else {
+            int x = getParametrs();
+            cout << endl << endl;
+
+            STARTUPINFO si_f;// structure that define some params of new process
+            STARTUPINFO si_g;
+            PROCESS_INFORMATION pi_f;// structure that contains info about newly created process and its primary thread
+            PROCESS_INFORMATION pi_g;
+
+            ZeroMemory(&si_f, sizeof(si_f));// fills a block of memory with zeros
+            si_f.cb = sizeof(si_f);//cb - size of structure in bytes
+            ZeroMemory(&pi_f, sizeof(pi_f));
+
+            ZeroMemory(&si_g, sizeof(si_g));
+            si_g.cb = sizeof(si_g);
+            ZeroMemory(&pi_g, sizeof(pi_g));
+
 
         }
     }
